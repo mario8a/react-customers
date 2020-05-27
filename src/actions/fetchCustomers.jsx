@@ -1,6 +1,5 @@
+import {FETCH_CUSTOMERS} from '../constanst';
+import {createAction} from 'redux-actions';
 
-export const fetchCustomers = () => {
-    debugger;
-    return {type: 'FETCH_CUSTOMERS', payload: null}
-    
-};
+
+export const fetchCustomers = createAction(FETCH_CUSTOMERS);
