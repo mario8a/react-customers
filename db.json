@@ -1,21 +1,21 @@
 {
-  "customers":[
+  "customers": [
     {
-        "dni": "416000904",
-        "name": "Mario Ochoa",
-        "age": 25
+      "dni": "416000904",
+      "name": "Mario Ochoa",
+      "age": 25
     },
     {
-        "dni": "7851498",
-        "name": "Karal max",
-        "age": 30
+      "dni": "7851498",
+      "name": "Karal max",
+      "age": 30
     },
     {
-        "dni": "22986451232",
-        "name": "Daniela Odai",
-        "age": 27
+      "dni": "22986451232",
+      "name": "Daniela Odai",
+      "age": 27
     }
-],
+  ],
   "posts": [
     {
       "id": 1,

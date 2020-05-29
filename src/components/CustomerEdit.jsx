@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {reduxForm, Field} from 'redux-form';
-import { connect } from 'react-redux';
 import { setPropsAsInitial } from '../helpers/setPropsAsInitial';
 import CustomersActions from './CustomersActions';
 
