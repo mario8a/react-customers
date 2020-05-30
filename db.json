@@ -1,10 +1,16 @@
 {
   "customers": [
     {
+      "id": "30000001",
+      "dni": "30000001",
+      "name": "Arcelia Vellaka",
+      "age": 25
+    },
+    {
       "id": "416000904",
       "dni": "416000904",
-      "name": "Marco Ochoa",
-      "age": 25
+      "name": "MARIO OCHOA",
+      "age": 29
     },
     {
       "id": "7851498",
@@ -17,6 +23,12 @@
       "dni": "22986451232",
       "name": "Daniela Odai",
       "age": 27
+    },
+    {
+      "name": "NUEVO CLIENTE 1",
+      "dni": "9999999",
+      "age": 11,
+      "id": "xV53D8U"
     }
   ],
   "posts": [
