@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {reduxForm, Field, isPristine} from 'redux-form';
+import {reduxForm, Field} from 'redux-form';
 import { setPropsAsInitial } from '../helpers/setPropsAsInitial';
 import CustomersActions from './CustomersActions';
 import { Prompt } from 'react-router-dom';
 
-// const isRequired = value => (
-//     !value && "Este campo es requerido"
-// );
+const isNumber = value => (
+    isNaN(Number(value)) && "El campo debe ser un número"
+);
+
 
 const validate = values => {
     const error = {};
@@ -24,16 +25,13 @@ const validate = values => {
     return error;
 };
 
-const isNumber = value => (
-    isNaN(Number(value)) && "El campo debe ser un numero"
-);
 
 const MyField = ({input, meta, type, label, name}) => (
     <div>
         <label htmlFor={name}>{label}</label>
         <input {...input} type={!type ? "text" : type}/>
         {
-            meta.touched && meta.error && <span> {meta.error} </span>
+             meta.touched && meta.error && <span>{meta.error}</span>
         }
     </div>
 )
@@ -41,8 +39,8 @@ const MyField = ({input, meta, type, label, name}) => (
 const toNumber = value => value && Number(value);
 const toUpper = value => value && value.toUpperCase();
 const toLower = value => value && value.toLowerCase();
-const onlyGrow = (value, prevValue, values) => 
-    value && (!prevValue ? value : (value > prevValue ? value : prevValue));
+const onlyGrow = (value, previousValue, values) => 
+    value && (!previousValue ? value : (value > previousValue ? value : previousValue));
 
 const CustomerEdit = ({name, dni, age, handleSubmit, submitting, onBack, pristine, submitSucceed}) => {
     return (
@@ -52,7 +50,6 @@ const CustomerEdit = ({name, dni, age, handleSubmit, submitting, onBack, pristin
                     <Field 
                         name="name" 
                         component={MyField} 
-                        type="text"
                         label="Nombre"
                         parse={toUpper}
                         format={toLower}
@@ -62,7 +59,6 @@ const CustomerEdit = ({name, dni, age, handleSubmit, submitting, onBack, pristin
                     <Field 
                         name="dni" 
                         component={MyField}
-                        type="text"
                         label="Dni">
                         
                     </Field>
@@ -85,8 +81,8 @@ const CustomerEdit = ({name, dni, age, handleSubmit, submitting, onBack, pristin
                     </button>
                 </CustomersActions>
                 <Prompt 
-                    when={!pristine && !submitSucceed} 
-                    message="Se perderan los cambios si continua">
+                     when={!pristine && !submitSucceed}
+                     message="Se perderán los datos si continúa">
 
                 </Prompt>
             </form>

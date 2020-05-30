@@ -28,9 +28,10 @@ class NewCustomerContainer extends Component {
 
 
     renderBody = () => {
-        return <CustomerEdit onSubmit={this.handleSubmit}
-                            onSubmitSuccess={this.handleOnSubmitSuccess}
-                            onBack={this.handleOnBack}/>
+        return <CustomerEdit 
+                        onSubmit={this.handleSubmit}
+                        onSubmitSuccess={this.handleOnSubmitSuccess}
+                        onBack={this.handleOnBack}/>
     }
 
     render() {
@@ -38,7 +39,6 @@ class NewCustomerContainer extends Component {
             <div>
                 <AppFrame header={`Creación de nuevo cliente`}
                     body={this.renderBody()}>
-
                 </AppFrame>
             </div>
         );

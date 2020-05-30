@@ -13,7 +13,7 @@ import { SubmissionError } from 'redux-form';
 class CustomerContainer extends Component {
 
     componentDidMount() {
-        if(!this.props.customer) {
+        if(this.props.customer.length === 0) {
             this.props.fetchCustomers();
         }
     }
